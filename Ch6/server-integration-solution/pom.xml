@@ -21,7 +21,7 @@
     <properties>
         <spring.version>5.0.4.RELEASE</spring.version>
         <spring.security.core.version>3.2.10.RELEASE</spring.security.core.version>
-        <spring.data.jpa.version>2.0.4.RELEASE</spring.data.jpa.version>
+        <spring.data.jpa.version>2.1.0.RELEASE</spring.data.jpa.version>
         <spring.oauth2.version>2.3.2.RELEASE</spring.oauth2.version>
         <spring.security.jwt.version>1.0.9.RELEASE</spring.security.jwt.version>
         <javassist.version>3.18.2-GA</javassist.version>
