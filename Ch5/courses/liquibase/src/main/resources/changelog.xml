@@ -1,0 +1,70 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="20180225-1700" author="Rui Vilao">
+        <createTable tableName="user">
+            <column name="id" type="BIGINT(19)" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="create_time" type="datetime" defaultValueComputed="CURRENT_TIMESTAMP"/>
+            <column name="update_time" type="datetime"/>
+
+            <column name="username" type="VARCHAR(256)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password" type="VARCHAR(128)"/>
+            <column name="salt" type="VARCHAR(128)"/>
+            <column name="name" type="VARCHAR(256)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="20180424-2230" author="Rui Vilao">
+        <createTable tableName="course">
+            <column name="id" type="BIGINT(19)" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="create_time" type="datetime" defaultValueComputed="CURRENT_TIMESTAMP"/>
+            <column name="update_time" type="datetime"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="20180424-2231" author="Rui Vilao">
+        <createTable tableName="user_course">
+            <column name="id" type="BIGINT(19)" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="create_time" type="datetime" defaultValueComputed="CURRENT_TIMESTAMP"/>
+            <column name="update_time" type="datetime"/>
+
+            <column name="user_id" type="BIGINT(19)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="course_id" type="BIGINT(19)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint baseTableName="user_course"
+                                 baseColumnNames="user_id"
+                                 constraintName="fk__user_course__user_id"
+                                 referencedTableName="user"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="user_course"
+                                 baseColumnNames="course_id"
+                                 constraintName="fk__user_course__course_id"
+                                 referencedTableName="course"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+    <changeSet id="20180225-2200" author="Rui Vilao">
+        <createIndex tableName="user" indexName="idx__user__username" unique="true">
+            <column name="username"/>
+        </createIndex>
+    </changeSet>
+
+</databaseChangeLog>

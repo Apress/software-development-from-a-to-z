@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Now is</title>
+</head>
+<body>
+  <div id="text"></div>
+  <script>
+    var counter = 1
+    var textDiv = document.getElementById('text')
+    setInterval(() => {
+      textDiv.innerHTML = `Hello for already ${counter} times!`
+      counter++
+    }, 1000)
+  </script>
+</body>
+</html>

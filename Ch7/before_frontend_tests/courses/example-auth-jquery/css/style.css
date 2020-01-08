@@ -1,0 +1,65 @@
+body {
+  background-color: #ffffff;
+  font-family: utopia-std, Verdana, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+#main {
+  padding: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-flow: row wrap;
+}
+#login {
+  width: 40%;
+  min-width: 300px;
+  padding: 50px;
+  border: 2px solid #f9f9f9;
+  border-radius: 10px;
+}
+#register {
+  width: 40%;
+  min-width: 300px;
+  padding: 48px;
+}
+h2 {
+  color: #c4c4c4;
+  letter-spacing: 1px;
+  font-weight: 100;
+}
+.form-field {
+  display: grid;
+  grid-template-columns: 20% auto;
+  margin-bottom: 10px;
+  align-items: center;
+}
+label, a, button, input {
+  font-size: 0.8em;
+  color: #82878d;
+}
+.form-field input {
+  background-color: #f6f6f6;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 0 8px 20px;
+}
+.buttons-group {
+  text-align: right;
+}
+.buttons-group input {
+  background: gray;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 20px;
+  color: #ffffff;
+}
+button {
+  padding: 5px 20px;
+  border: 2px solid #f9f9f9;
+  border-radius: 3px;
+}
+::placeholder {
+  color: #e5e5e5;
+  opacity: 1; /* Firefox */
+}

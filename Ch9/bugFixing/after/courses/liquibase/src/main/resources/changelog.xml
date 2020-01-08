@@ -1,0 +1,274 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="20180225-1700" author="Rui Vilao">
+        <createTable tableName="user">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="create_time" type="datetime" defaultValueComputed="CURRENT_TIMESTAMP"/>
+            <column name="update_time" type="datetime"/>
+
+            <column name="username" type="VARCHAR(256)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password" type="VARCHAR(128)"/>
+            <column name="salt" type="VARCHAR(128)"/>
+            <column name="name" type="VARCHAR(256)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="20180424-2230" author="Rui Vilao">
+        <createTable tableName="course">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="create_time" type="datetime" defaultValueComputed="CURRENT_TIMESTAMP"/>
+            <column name="update_time" type="datetime"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="20180424-2231" author="Rui Vilao">
+        <createTable tableName="user_course">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="create_time" type="datetime" defaultValueComputed="CURRENT_TIMESTAMP"/>
+            <column name="update_time" type="datetime"/>
+
+            <column name="user_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="course_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint baseTableName="user_course"
+                                 baseColumnNames="user_id"
+                                 constraintName="fk__user_course__user_id"
+                                 referencedTableName="user"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="user_course"
+                                 baseColumnNames="course_id"
+                                 constraintName="fk__user_course__course_id"
+                                 referencedTableName="course"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+    <changeSet id="20180225-2200" author="Rui Vilao">
+        <createIndex tableName="user" indexName="idx__user__username" unique="true">
+            <column name="username"/>
+        </createIndex>
+    </changeSet>
+    
+    <changeSet id="20180520-1250" author="Rui Vilao">
+        <addColumn tableName="course">
+            <column name="name" type="VARCHAR(64)"/>
+            <column name="description" type="VARCHAR(256)"/>
+            <column name="duration_hours" type="INT"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="20180520-1410" author="Rui Vilao">
+        <addColumn tableName="user_course">
+            <column name="start_time" type="datetime"/>
+            <column name="finish_time" type="datetime"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="20180520-1415" author="Rui Vilao">
+        <createIndex tableName="user_course" indexName="idx_u_ftime">
+            <column name="course_id"/>
+            <column name="user_id"/>
+            <column name="finish_time"/>
+        </createIndex>
+    </changeSet>
+
+    <changeSet id="20180520-1430" author="Rui Vilao">
+        <sql>
+            INSERT INTO course(id, name, description, duration_hours)
+            VALUES (1, 'Test Dev', 'Course to test during development', 36);
+        </sql>
+    </changeSet>
+
+    <changeSet id="20180523-2121" author="Rui Vilao">
+        <createTable tableName="module">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="create_time" type="datetime" defaultValueComputed="CURRENT_TIMESTAMP"/>
+            <column name="update_time" type="datetime"/>
+
+            <column name="name" type="VARCHAR(64)"/>
+            <column name="description" type="VARCHAR(256)"/>
+            <column name="duration_minutes" type="INT"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="20180523-2125" author="Rui Vilao">
+        <createTable tableName="course_module">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="create_time" type="datetime" defaultValueComputed="CURRENT_TIMESTAMP"/>
+            <column name="update_time" type="datetime"/>
+
+            <column name="course_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="module_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="number" type="INT"/>
+            <column name="start_time" type="datetime"/>
+            <column name="finish_time" type="datetime"/>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="course_module"
+                                 baseColumnNames="course_id"
+                                 constraintName="fk__course_module__course_id"
+                                 referencedTableName="course"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="course_module"
+                                 baseColumnNames="module_id"
+                                 constraintName="fk__course_module__module_id"
+                                 referencedTableName="module"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+    <changeSet id="20180523-2127" author="Rui Vilao">
+        <createTable tableName="lecture">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="create_time" type="datetime" defaultValueComputed="CURRENT_TIMESTAMP"/>
+            <column name="update_time" type="datetime"/>
+
+            <column name="name" type="VARCHAR(64)"/>
+            <column name="description" type="VARCHAR(256)"/>
+            <column name="duration_minutes" type="INT"/>
+            <column name="media_source" type="VARCHAR(256)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="20180523-2130" author="Rui Vilao">
+        <createTable tableName="module_lecture">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="create_time" type="datetime" defaultValueComputed="CURRENT_TIMESTAMP"/>
+            <column name="update_time" type="datetime"/>
+
+            <column name="module_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="lecture_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="number" type="INT"/>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="module_lecture"
+                                 baseColumnNames="module_id"
+                                 constraintName="fk__module_lecture__module_id"
+                                 referencedTableName="module"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="module_lecture"
+                                 baseColumnNames="lecture_id"
+                                 constraintName="fk__module_lecture__lecture_id"
+                                 referencedTableName="lecture"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+    <changeSet id="20180523-2144" author="Rui Vilao">
+        <createTable tableName="question_answer">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="create_time" type="datetime" defaultValueComputed="CURRENT_TIMESTAMP"/>
+            <column name="update_time" type="datetime"/>
+
+            <column name="question" type="text"/>
+            <column name="answer" type="text"/>
+            <column name="correct_answer" type="text"/>
+
+            <column name="lecture_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="question_answer"
+                                 baseColumnNames="lecture_id"
+                                 constraintName="fk__question_answer__lecture_id"
+                                 referencedTableName="lecture"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+    <changeSet id="20180602-1730" author="Rui Vilao">
+        <sql>
+            INSERT INTO module (id, name, description, duration_minutes)
+            VALUES (1, 'Test Module', 'A module to test the development', 180);
+            INSERT INTO course_module (id, course_id, module_id, number)
+            VALUES (1, 1, 1, 1);
+            INSERT INTO lecture (id, name, description, duration_minutes, media_source)
+            VALUES (1, 'Test Lecture', 'A lecture for development', 30,
+            'https://www.youtube.com/watch?v=C0DPdy98e4c');
+            INSERT INTO module_lecture (id, module_id, lecture_id, number)
+            VALUES (1, 1, 1, 1);
+            INSERT INTO question_answer (id, question, answer, correct_answer, lecture_id)
+            VALUES
+            (1, 'How many times can we hear the beep sound?', '[1, 2, 3, 4]', '[3]', 1),
+            (2, 'From where does the count down start?', '[3, 10, 15, 5]', '[4]', 1),
+            (3, 'What letters appear during the count down?', '["A and B", "C and F", "D and F", "B and F"]', '[2]', 1)
+            ;
+        </sql>
+    </changeSet>
+
+    <changeSet id="20180603-1640" author="Rui Vilao">
+        <createTable tableName="user_course_qa">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="create_time" type="datetime" defaultValueComputed="CURRENT_TIMESTAMP"/>
+            <column name="update_time" type="datetime"/>
+
+            <column name="user_course_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="qa_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="answer" type="text">
+                <constraints nullable="false"/>
+            </column>
+            <column name="correct" type="boolean">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createIndex tableName="user_course_qa" indexName="idx_ucqa_uc_qa" unique="true">
+            <column name="user_course_id"/>
+            <column name="qa_id"/>
+        </createIndex>
+        <addForeignKeyConstraint baseTableName="user_course_qa"
+                                 baseColumnNames="user_course_id"
+                                 constraintName="fk_ucqa_uci"
+                                 referencedTableName="user_course"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="user_course_qa"
+                                 baseColumnNames="qa_id"
+                                 constraintName="fk_ucqa_qai"
+                                 referencedTableName="question_answer"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+</databaseChangeLog>

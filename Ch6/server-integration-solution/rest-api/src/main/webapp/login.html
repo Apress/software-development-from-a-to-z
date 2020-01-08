@@ -1,0 +1,53 @@
+<html>
+<head>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery.js"></script>
+  <script>
+    function login () {
+      $.post('http://localhost:8080/oauth/token', {
+          grant_type: 'password',
+          username: $('#email').val(),
+          password: $('#password').val()
+        })
+        .then(result => {
+          window.location = 'http://localhost:8080/courses.html'
+        })
+        .catch(err => console.log(err))
+    }
+    $(document).ready(() => {
+      $('input[type=submit]').click(function (ev) {
+        ev.preventDefault()
+        ev.stopPropagation()
+        login()
+      })
+    })
+  </script>
+</head>
+<body>
+<div id="main">
+  <div id="login">
+    <h2>Log in</h2>
+    <form>
+      <div class="form-field">
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="youremail@example.com" />
+      </div>
+      <div class="form-field">
+        <label for="password">
+          Password
+        </label>
+        <input id="password" type="password" placeholder="Type your password" />
+      </div>
+      <div class="buttons-group">
+        <a href="#">Cancel</a>
+        <input type="submit" value="Login" />
+      </div>
+    </form>
+  </div>
+  <div id="register">
+    <h2>Don't have an account?</h2>
+    <button>Register</button>
+  </div>
+</div>
+</body>
+</html>

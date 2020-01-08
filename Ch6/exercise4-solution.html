@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Now is</title>
+</head>
+<body>
+  <div id="time"></div>
+  <script>
+    function updateTime () {
+      var date = new Date()
+      document.getElementById('time').innerHTML = `Now it is ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+    }
+    setInterval(updateTime, 1000)
+  </script>
+</body>
+</html>

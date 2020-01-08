@@ -1,0 +1,12 @@
+{
+  "oauth2": {
+    "type": "oauth2",
+    "tokenUrl": "http://localhost:8080/oauth/token",
+    "flow": "password",
+    "in": "header",
+    "scopes": {
+      "write": "Write",
+      "read": "Read"
+    }
+  }
+}

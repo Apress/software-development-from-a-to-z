@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Now is</title>
+</head>
+<body>
+  <div id="time"></div>
+  <button id="update">Update time!</button>
+  <script>
+    function updateTime () {
+      var date = new Date()
+      document.getElementById('time').innerHTML = `Now it is ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+    }
+    var button = document.getElementById('update')
+    button.onclick = updateTime
+  </script>
+</body>
+</html>

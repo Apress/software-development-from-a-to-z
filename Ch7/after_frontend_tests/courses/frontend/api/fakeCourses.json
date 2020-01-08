@@ -1,0 +1,212 @@
+{
+  "data": {
+    "content": [
+      {
+        "id": 1,
+        "name": "Test Dev",
+        "description": "Course to test during development",
+        "durationHours": 36,
+        "active": false,
+        "enrolled": false
+      },
+      {
+        "id": 2,
+        "name": "Test Dev",
+        "description": "Course to test during development",
+        "durationHours": 36,
+        "active": false,
+        "enrolled": false
+      },
+      {
+        "id": 3,
+        "name": "Test Dev",
+        "description": "Course to test during development",
+        "durationHours": 36,
+        "active": false,
+        "enrolled": false
+      },
+      {
+        "id": 4,
+        "name": "Test Dev",
+        "description": "Course to test during development",
+        "durationHours": 36,
+        "active": false,
+        "enrolled": false
+      },
+      {
+        "id": 5,
+        "name": "Test Dev",
+        "description": "Course to test during development",
+        "durationHours": 36,
+        "active": false,
+        "enrolled": false
+      },
+      {
+        "id": 6,
+        "name": "Test Dev",
+        "description": "Course to test during development",
+        "durationHours": 36,
+        "active": false,
+        "enrolled": false
+      },
+      {
+        "id": 7,
+        "name": "Test Dev",
+        "description": "Course to test during development",
+        "durationHours": 36,
+        "active": false,
+        "enrolled": false
+      },
+      {
+        "id": 8,
+        "name": "Test Dev",
+        "description": "Course to test during development",
+        "durationHours": 36,
+        "active": false,
+        "enrolled": false
+      },
+      {
+        "id": 9,
+        "name": "Test Dev",
+        "description": "Course to test during development",
+        "durationHours": 36,
+        "active": false,
+        "enrolled": false
+      },
+      {
+        "id": 10,
+        "name": "Test Dev",
+        "description": "Course to test during development",
+        "durationHours": 36,
+        "active": false,
+        "enrolled": false
+      },
+      {
+        "id": 11,
+        "name": "Test Dev",
+        "description": "Course to test during development",
+        "durationHours": 36,
+        "active": false,
+        "enrolled": false
+      },
+      {
+        "id": 12,
+        "name": "Test Dev",
+        "description": "Course to test during development",
+        "durationHours": 36,
+        "active": false,
+        "enrolled": false
+      },
+      {
+        "id": 13,
+        "name": "Test Dev",
+        "description": "Course to test during development",
+        "durationHours": 36,
+        "active": false,
+        "enrolled": false
+      },
+      {
+        "id": 14,
+        "name": "Test Dev",
+        "description": "Course to test during development",
+        "durationHours": 36,
+        "active": false,
+        "enrolled": false
+      },
+      {
+        "id": 15,
+        "name": "Test Dev",
+        "description": "Course to test during development",
+        "durationHours": 36,
+        "active": false,
+        "enrolled": false
+      },
+      {
+        "id": 16,
+        "name": "Test Dev",
+        "description": "Course to test during development",
+        "durationHours": 36,
+        "active": false,
+        "enrolled": false
+      },
+      {
+        "id": 17,
+        "name": "Test Dev",
+        "description": "Course to test during development",
+        "durationHours": 36,
+        "active": false,
+        "enrolled": false
+      },
+      {
+        "id": 18,
+        "name": "Test Dev",
+        "description": "Course to test during development",
+        "durationHours": 36,
+        "active": false,
+        "enrolled": false
+      },
+      {
+        "id": 19,
+        "name": "Test Dev",
+        "description": "Course to test during development",
+        "durationHours": 36,
+        "active": false,
+        "enrolled": false
+      },
+      {
+        "id": 20,
+        "name": "Test Dev",
+        "description": "Course to test during development",
+        "durationHours": 36,
+        "active": false,
+        "enrolled": false
+      },
+      {
+        "id": 21,
+        "name": "Test Dev",
+        "description": "Course to test during development",
+        "durationHours": 36,
+        "active": false,
+        "enrolled": false
+      },
+      {
+        "id": 22,
+        "name": "Test Dev",
+        "description": "Course to test during development",
+        "durationHours": 36,
+        "active": false,
+        "enrolled": false
+      },
+      {
+        "id": 23,
+        "name": "Test Dev",
+        "description": "Course to test during development",
+        "durationHours": 36,
+        "active": false,
+        "enrolled": false
+      }
+    ],
+    "pageable": {
+      "sort": {
+        "sorted": false,
+        "unsorted": true
+      },
+      "offset": 0,
+      "pageSize": 20,
+      "pageNumber": 0,
+      "paged": true,
+      "unpaged": false
+    },
+    "last": true,
+    "totalPages": 1,
+    "totalElements": 1,
+    "size": 20,
+    "number": 0,
+    "sort": {
+      "sorted": false,
+      "unsorted": true
+    },
+    "first": true,
+    "numberOfElements": 1
+  }
+}

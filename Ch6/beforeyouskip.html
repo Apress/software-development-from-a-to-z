@@ -1,0 +1,10 @@
+<div style='text-align:center'>
+  <h1>Hello my dear friend! <span style='color:red'>&hearts;</span></h1>
+  <img src="http://thecatapi.com/api/images/get?format=src&type=gif">
+</div>
+<script>
+  const src = 'http://thecatapi.com/api/images/get?format=src&type=gif'
+  setInterval(() => {
+    document.getElementsByTagName('img')[0].src = src + '&ts=' + Date.now()
+  }, 3000)
+</script>

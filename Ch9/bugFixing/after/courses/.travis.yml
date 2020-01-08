@@ -1,0 +1,14 @@
+language: java
+jdk:
+  - openjdk8
+script: mvn clean install -Ptest
+cache:
+  directories:
+    - $HOME/.m2/
+deploy:
+  provider: heroku
+  app: eleplatform
+  api_key:
+    secure: kdrFAjvhkf6pFDVbCOpTlPm3tPDuJwJJvM3tfS/oOvpwCT07T2nXdjr7uvgQvJg1O2kJDwl+IePov8fua0T0f/Y/lhutHLJGTj11832iPemH1oDsSxrBT5ye4umW1L469s47gmYKH0MYzt03NeoJqhe/VnUKmSfNeRK1d+eg1koUqmXxwVP2brRqBYnaFGpGjarVWFbTNGrggidJ73wGCR7DHuXiKnSRE24xucKLVvvSoJmtjvxtzSj/tG7VE9I+aF4RYIiZsGpnDhIBtwHwH9SLavqI6o2EJ5SRPO1jgtnI7sqDhVnSdDdlQKyGl2JujZH0fuxWCRUy8imKXoBCUcK1AO/UBguts+/j8kfoSTl5eTOjXSUQTkt0hFHL3/UQOPmXE52DQKkk2mu3Yv+pZT2Al1g2ftANyk1b8wm+EdE0bSPC2qgXQh2Pmz22idPkGAO/iOi6aVABmG4MqY0X8Q0o4B/h7WLJCMaHl7l0DGE1eZlk5E+RNSjCZ1qFmA60ejBe20jNP3fV8XrgWPvC6PDP7DJACw/SNlEPiWjnAZNNdvjGe3jAcLNQyrDcjrkHiPtAMQSKy46tJE4ALRNIeNkOoJsn9kPY5k7LqXR1eUsmJIAZkdLXviYw6gVWHLd+lIRsiGtke5Z2rDS72MIOiOgrSccSVGzwYx/T91oQOZg=
+  run: "DATABASE_URL_JDBC=$DB_PROD mvn liquibase:update -pl liquibase -Pheroku"
+  on: master

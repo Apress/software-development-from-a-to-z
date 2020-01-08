@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Today is</title>
+</head>
+<body>
+  <div id="date"></div>
+  <script>
+    var displayDate = ''
+    var date = new Date()
+    displayDate = displayDate + 'Today is ' + date.toLocaleString('en-us', {month: 'long'}) + ', ' + date.getDate()
+    document.getElementById('date').innerHTML = displayDate
+  </script>
+</body>
+</html>

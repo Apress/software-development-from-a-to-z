@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Now is</title>
+</head>
+<body>
+  <div id="time"></div>
+  <script>
+    var date = new Date()
+    document.getElementById('time').innerHTML = `Now it is ${date.getHours()}:${date.getMinutes()}`
+  </script>
+</body>
+</html>
