@@ -41,7 +41,7 @@
         <junit.version>4.12</junit.version>
         <jackson.core.version>2.9.2</jackson.core.version>
         <assertj.core.version>2.6.0</assertj.core.version>
-        <postgres.connector.java.version>42.2.1</postgres.connector.java.version>
+        <postgres.connector.java.version>42.2.25</postgres.connector.java.version>
         <maven.dependency.plugin.version>3.0.2</maven.dependency.plugin.version>
         <swagger.core.version>1.5.12</swagger.core.version>
     </properties>
