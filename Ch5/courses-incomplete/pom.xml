@@ -32,7 +32,7 @@
         <servlet.api.version>3.1.0</servlet.api.version>
         <guava.version>18.0</guava.version>
         <tomcat.plugin.version>2.2</tomcat.plugin.version>
-        <jackson.version>2.9.4</jackson.version>
+        <jackson.version>2.12.7.1</jackson.version>
         <mvn.war.plugin.version>2.6</mvn.war.plugin.version>
         <liquibase.maven.plugin.version>3.5.5</liquibase.maven.plugin.version>
         <java.version>1.8</java.version>
