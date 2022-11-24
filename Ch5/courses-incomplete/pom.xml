@@ -28,7 +28,7 @@
         <h2.version>1.4.196</h2.version>
         <aspectjweaver.version>1.8.13</aspectjweaver.version>
         <hikaricp.version>2.7.8</hikaricp.version>
-        <hibernate.version>5.2.13.Final</hibernate.version>
+        <hibernate.version>5.3.20.Final</hibernate.version>
         <servlet.api.version>3.1.0</servlet.api.version>
         <guava.version>18.0</guava.version>
         <tomcat.plugin.version>2.2</tomcat.plugin.version>
