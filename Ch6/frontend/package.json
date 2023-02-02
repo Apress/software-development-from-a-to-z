@@ -15,7 +15,7 @@
     "@nuxtjs/proxy": "^1.2.4",
     "dotenv": "^5.0.1",
     "nuxt": "^1.0.0",
-    "vue-resource": "^1.5.1",
+    "vue-resource": "^1.5.3",
     "vuetify": "^1.0.0",
     "vuex-persistedstate": "^2.5.4"
   },
