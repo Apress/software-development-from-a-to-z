@@ -19,7 +19,7 @@
     </modules>
 
     <properties>
-        <spring.version>5.0.4.RELEASE</spring.version>
+        <spring.version>5.2.23.RELEASE</spring.version>
         <spring.security.core.version>3.2.10.RELEASE</spring.security.core.version>
         <spring.data.jpa.version>2.0.4.RELEASE</spring.data.jpa.version>
         <spring.oauth2.version>2.3.2.RELEASE</spring.oauth2.version>
